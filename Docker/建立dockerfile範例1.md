@@ -40,3 +40,7 @@ cat /etc/hosts
 
 使用 browser 輸入 http://127.0.0.1:8080/helloworld.html
 ![image](https://hackmd.io/_uploads/BJVDnnGhkl.png)
+
+## 參考資料
+https://ithelp.ithome.com.tw/articles/10190921
+https://ithelp.ithome.com.tw/articles/10191016
