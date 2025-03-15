@@ -90,7 +90,7 @@ docker ps -a
 --name 可指定 container 名稱
 -i|--interactive 是讓 container 的標準輸入保持打開
 -t|--tty 選項是告訴 Docker 要分配一個虛擬終端機（pseudo-tty）並綁定到 container 的標準輸入上
-
+-d|啟動後背景執行
 */
 
 docker create -i -t --name [容器名稱] [image名稱]
@@ -100,9 +100,11 @@ docker create -i -t --name [容器名稱] [image名稱]
 ### 執行
 ```
 docker start -i [container名稱]
+這個只能啟動container，如果docer run或docker create沒有加入-it、-d參數，那docker start也不能使用-it、-d參數
 
-PS. docker create和docker start都必須要-i功能才會啟用。
-    與docker run 的-i就等於docker create、docker start
+-i 是讓 container 的標準輸入保持打開，切換為前景模式
+-t 選項是告訴 Docker 要分配一個虛擬終端機（pseudo-tty）並綁定到 container 的標準輸入上
+
 
 ```
 ![image](https://hackmd.io/_uploads/Sk0xDpddyx.png)
@@ -156,8 +158,9 @@ docker exec -it <container_id> env
 docker inspect <container_id_or_name>
 ```
 
-NetworkSettings.Networks的節點，IPAddress 顯示的是容器的內部 IP 位址。
-(以下範例預設網路模式（bridge 模式），主機pietty想要連線容器，IP是172.17.0.2)
+NetworkSettings.Networks的節點，IPAddress 顯示的是容器的內部 IP 位址，給其他容器連進來，以下範例預設網路模式（bridge 模式）
+(除非特殊設定，筆電不能用這個IP連進去要使用127.0.0.1，因為docker隔離了)
+
 
 ```
 "NetworkSettings": {
@@ -170,7 +173,7 @@ NetworkSettings.Networks的節點，IPAddress 顯示的是容器的內部 IP 位
 
 ```
 如果容器的端口被綁定到主機的端口，相關資訊可以在 NetworkSettings.Ports 節點中找到
-(主機pietty想要連線容器，Port是8080)
+(筆電pietty想要連線容器，Port是8080)
 ```
 "Ports": {
     "80/tcp": [
