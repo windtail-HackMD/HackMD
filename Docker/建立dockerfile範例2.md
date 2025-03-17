@@ -58,7 +58,7 @@ CMD ["bin/catalina.sh", "run"]
 
 --no-cache: 這個選項告訴 Docker 在建構過程中不要使用任何緩存。通常 Docker 會利用緩存來加速映像檔的建立，這樣就能跳過一些不需要變動的步驟。加上 --no-cache 之後，Docker 每次都會從頭開始建立映像檔，不會使用先前的緩存。
 ```
-docker build -t mytomcat . --no-cache
+docker build -t my-tomcat . --no-cache
 ```
 
 確認新建Image
