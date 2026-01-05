@@ -8,7 +8,7 @@ mkdir docker-test
 cd docker-test
 ```
 將需要的資源(如 JDK java8)，放在docker-test
-(https://hackmd.io/_uploads/S1L0m77nke.png)
+![圖片一](https://hackmd.io/_uploads/S1L0m77nke.png)
 
 建立Dockerfile
 ```
