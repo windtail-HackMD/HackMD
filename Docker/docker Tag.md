@@ -1,7 +1,7 @@
 # tag
 ## 建立自己的 Tags(標籤)
 看一下自己現在本機所有的 Image(映像)
-![圖片一](https://hackmd.io/_uploads/rkELIfsukg.png)
+![圖片一](https://hackmd.io/_uploads/SkZ6EYDd1l.png)
 建立一個有新標籤的 Image(映像)
 ```
 docker tag <本機現有映像 id_or_repository>:<本機現有標籤> <新映像 repository>:<新標籤>
